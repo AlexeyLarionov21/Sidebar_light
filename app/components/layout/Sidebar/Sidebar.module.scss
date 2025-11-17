@@ -1,6 +1,9 @@
 :root {
   --sb-padding: 16px;
   --sb-width: 280px;
+  --av-size: 42px;
+  --pr-status: 9px;
+  --pd-default: 8px;
 }
 
 *,
@@ -19,6 +22,12 @@
   box-sizing: border-box;
   border-radius: 12px;
 
+  .divider {
+    height: 1px;
+    background: #e9e9e9;
+    margin: 0 calc(var(--sb-padding) * -1);
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -31,15 +40,14 @@
       align-items: center;
       display: flex;
       width: 100%;
-      border-bottom: #e9e9e9 1px solid;
       padding-bottom: var(--sb-padding);
-      border: blue 1px solid;
+      // border: blue 1px solid;
     }
 
     .leftLogo {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: var(--pd-default);
       flex: 0 0 auto;
     }
 
@@ -50,16 +58,65 @@
     }
 
     .sectorSearch {
-      border: blue 1px solid;
+      // border: blue 1px solid;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: var(--sb-padding);
     }
     .sectorMenu {
-      border: blue 1px solid;
+      // border: blue 1px solid;
       display: block;
-      padding: var(--sb-padding);
+      padding: var(--sb-padding) 0;
+    }
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    gap: var(--sb-padding);
+
+    .avatar {
+      position: relative;
+      width: var(--av-size);
+      height: var(--av-size);
+
+      .status {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: var(--pr-status);
+        height: var(--pr-status);
+        background: #22c55e;
+        border-radius: 50%;
+      }
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #ffcfcf;
+      object-position: center -10%;
+    }
+
+    .information {
+      display: flex;
+      flex-direction: column;
+
+      gap: calc(var(--pd-default) / 2);
+
+      .name {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      .email {
+        font-size: 0.9rem;
+        font-weight: 400;
+      }
     }
   }
 }

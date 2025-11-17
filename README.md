@@ -11,7 +11,7 @@ Built with **Vue 3 / Nuxt 3 + SCSS modules**.
 
 ---
 
-THIS ISФ AN OPEN-SOURCE PROJECT
+THIS IS AN OPEN-SOURCE PROJECT
 
 ## Demo
 
@@ -45,7 +45,7 @@ THIS ISФ AN OPEN-SOURCE PROJECT
 ```bash
 git clone https://github.com/AlexeyLarionov21/Sidebar_light.git
 
-cd sidebar
+cd Sidebar_light
 
 npm install
 
