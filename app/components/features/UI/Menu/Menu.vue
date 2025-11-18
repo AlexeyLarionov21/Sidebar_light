@@ -1,23 +1,25 @@
 <template>
-  <span :class="$style.title">{{ menu.title }}</span>
-  <nav>
-    <ul :class="$style.menu">
-      <li
-        v-for="item in menu.items"
-        :key="item.id"
-        :class="[$style.item, isActive(item.id) && $style.selected]"
-      >
-        <NuxtLink
-          :to="item.to"
-          :class="[$style.link, isCollapsed && $style.collapsed]"
-          @click="setActive(item.id)"
+  <div :class="[$style.container, isCollapsed && $style.collapsed]">
+    <span :class="$style.title">{{ menu.title }}</span>
+    <nav>
+      <ul :class="$style.menu">
+        <li
+          v-for="item in menu.items"
+          :key="item.id"
+          :class="[$style.item, isActive(item.id) && $style.selected]"
         >
-          <Icon :icon="item.icon" :height="iconSize" :width="iconSize" />
-          <span :class="$style.label">{{ item.label }}</span>
-        </NuxtLink>
-      </li>
-    </ul>
-  </nav>
+          <NuxtLink
+            :to="item.to"
+            :class="$style.link"
+            @click="setActive(item.id)"
+          >
+            <Icon :icon="item.icon" :height="iconSize" :width="iconSize" />
+            <span :class="$style.label">{{ item.label }}</span>
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style module lang="scss" src="./Menu.module.scss" />
@@ -35,5 +37,5 @@ const props = defineProps<{
 const { isActive, setActive } = useSelected();
 const { isCollapsed } = useCollapsed();
 
-const iconSize = 20;
+const iconSize = 22;
 </script>

@@ -3,6 +3,7 @@ export const useCollapsed = () => {
 
   const setCollapsed = () => {
     isCollapsed.value = !isCollapsed.value;
+    console.log(isCollapsed.value);
   };
 
   return {
